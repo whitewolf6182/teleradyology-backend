@@ -53,21 +53,21 @@
 // db.ts
 import { SQL } from "bun";
 
-let db = null;
+let db: SQL | null = null;
 
 function getDb() {
   if (!db) {
     db = new SQL({
-      hostname: process.env.PGHOST || "mainline.proxy.rlwy.net",
-      port: parseInt(process.env.PGPORT || "10844"),
-      database: process.env.PGDATABASE || "railway",
-      username: process.env.PGUSER || "postgres",
-      password: process.env.PGPASSWORD || "CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO"
+
+      hostname: "mainline.proxy.rlwy.net",
+      port: 10844,
+      database: "railway",
+      username: "postgres",
+      password: "CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO"
     });
   }
   return db;
 }
 
- const sql = getDb();
+export const sql = getDb();
 
-export default sql;
