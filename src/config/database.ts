@@ -56,18 +56,14 @@ import { SQL } from "bun";
 let db: SQL | null = null;
 
 function getDb() {
-  if (!db) {
-    db = new SQL({
 
-      hostname: "mainline.proxy.rlwy.net",
-      port: 10844,
-      database: "railway",
-      username: "postgres",
-      password: "CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO"
-    });
-  }
+    const connectionString =  "postgresql://postgres:CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO@mainline.proxy.rlwy.net:10844/railway";
+    
+    db = new SQL(connectionString);
+  
   return db;
 }
 
 export const sql = getDb();
+
 
