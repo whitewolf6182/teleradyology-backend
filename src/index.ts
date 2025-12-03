@@ -40,9 +40,9 @@ console.log('All Companies:', result);
 
 // }
 
-const PORT = Number(process.env.PORT); // Railway otomatik sağlar
+// const PORT = Number(process.env.PORT); // Railway otomatik sağlar
 
-console.log(PORT);
+// console.log(PORT);
 
 const app = new Elysia()
   .use(cors())
@@ -97,8 +97,13 @@ const app = new Elysia()
       message: 'Internal server error',
     };
   })
-.listen({
-    port: PORT,
+
+const port = process.env.PORT || 3000;
+
+console.log(port);
+
+app.listen({
+    port: port,
     hostname: "0.0.0.0",
 });
 
