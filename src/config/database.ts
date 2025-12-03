@@ -57,13 +57,16 @@ let db: SQL | null = null;
 
 function getDb() {
 
-    const connectionString =  "postgresql://postgres:CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO@mainline.proxy.rlwy.net:10844/railway";
+    const connectionString = "postgresql://postgres:CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO@mainline.proxy.rlwy.net:10844/railway";
     
     db = new SQL(connectionString);
   
   return db;
 }
 
-export const sql = getDb();
+const sql = getDb();
+
+export default sql;
+
 
 
