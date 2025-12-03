@@ -103,7 +103,7 @@ const port = process.env.PORT || 3000;
 console.log(port);
 
 app.listen({
-    port: port,
+    port: 3000,
     hostname: "0.0.0.0",
 });
 
