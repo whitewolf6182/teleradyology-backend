@@ -96,7 +96,7 @@ const app = new Elysia()
     };
   })
   // .listen(process.env.PORT || 6182);
-  .listen(process.env.PORT || 6182);
+  .listen(8080);
 
 console.log(
   `🚀 Teleradiology Backend is running at http://${app.server?.hostname}:${app.server?.port}`
