@@ -58,7 +58,7 @@ let db: SQL | null = null;
 function getDb() {
   if (!db) {
     db = new SQL({
-      url: process.env.DATABASE_URL || "postgres://postgres:142536@localhost:5432/telerad",
+      url: process.env.DATABASE_URL ||   "postgresql://neondb_owner:npg_k60yRrFKeEia@ep-polished-waterfall-a4amh8yb-pooler.us-east-1.aws.neon.tech/teleradyology?sslmode=require&channel_binding=require",
       max: 10,
       idleTimeout: 60,
       connectionTimeout: 5,
