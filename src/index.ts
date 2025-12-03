@@ -8,8 +8,8 @@ import { userCompanyRoutes } from './routes/user-company.routes';
 import { institutionRoutes } from './routes/institution.routes';
 import { deviceRoutes } from './routes/device.routes';
 
-import {InstitutionService} from './services/institution.service';
-import {CompanyService}  from './services/company.service';
+import { InstitutionService } from './services/institution.service';
+import { CompanyService } from './services/company.service';
 
 const institutionService = new InstitutionService();
 const companyService = new CompanyService();
@@ -17,7 +17,7 @@ const companyService = new CompanyService();
 
 // console.time("getAllCompanies");
 
- const result = await companyService.getAllCompanies({});
+const result = await companyService.getAllCompanies({});
 
 // console.timeEnd("getAllCompanies");
 
@@ -96,7 +96,14 @@ const app = new Elysia()
     };
   })
   // .listen(process.env.PORT || 6182);
-  .listen(8080);
+  // .listen(8080);
+
+   .listen({
+  port: 8080,
+  hostname: "0.0.0.0",
+});
+
+
 
 console.log(
   `🚀 Teleradiology Backend is running at http://${app.server?.hostname}:${app.server?.port}`
