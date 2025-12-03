@@ -36,7 +36,7 @@ export class CompanyRepository {
     console.log('Query Params:', params);
     console.log('Where Clause:', whereClause);
 
-    // return await db`
+    // return await db`.
     //   SELECT * FROM companies
     //   WHERE ${whereClause}
     //   ORDER BY created_at DESC
