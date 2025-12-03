@@ -53,18 +53,19 @@
 // db.ts
 import { SQL } from "bun";
 
-let db: SQL | null = null;
+let db = null;
 
 function getDb() {
   if (!db) {
     db = new SQL({
-      url: process.env.DATABASE_URL ||   "postgresql://postgres:CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO@mainline.proxy.rlwy.net:10844/railway",
-      max: 10,
-      idleTimeout: 60,
-      connectionTimeout: 5,
+      hostname: process.env.PGHOST || "mainline.proxy.rlwy.net",
+      port: parseInt(process.env.PGPORT || "10844"),
+      database: process.env.PGDATABASE || "railway",
+      username: process.env.PGUSER || "postgres",
+      password: process.env.PGPASSWORD || "CDPmWIjXXrHGIbFrmdBeapDAfJKcIcIO"
     });
   }
-  return db!;
+  return db;
 }
 
  const sql = getDb();
