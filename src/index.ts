@@ -17,11 +17,11 @@ const companyService = new CompanyService();
 
 // console.time("getAllCompanies");
 
-// const result = await companyService.getAllCompanies({});
+ const result = await companyService.getAllCompanies({});
 
 // console.timeEnd("getAllCompanies");
 
-// console.log('All Companies:', result);
+console.log('All Companies:', result);
 
 
 // for(let i = 0; i < 1000; i++) {
@@ -95,7 +95,8 @@ const app = new Elysia()
       message: 'Internal server error',
     };
   })
-  .listen(process.env.PORT || 3000);
+  // .listen(process.env.PORT || 6182);
+  .listen(process.env.PORT || 6182);
 
 console.log(
   `🚀 Teleradiology Backend is running at http://${app.server?.hostname}:${app.server?.port}`
