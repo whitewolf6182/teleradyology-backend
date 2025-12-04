@@ -358,9 +358,8 @@ export const deviceRoutes = new Elysia({ prefix: '/devices' })
         description: 'Sisteme yeni bir cihaz kaydı oluşturur'
       },
       body: t.Object({
-        device_code: t.String({ minLength: 1, maxLength: 50 }),
         device_name: t.String({ minLength: 1, maxLength: 255 }),
-        device_type: t.Union([
+        modality: t.Union([
           t.Literal('mri'),
           t.Literal('ct'),
           t.Literal('xray'),
@@ -369,6 +368,7 @@ export const deviceRoutes = new Elysia({ prefix: '/devices' })
           t.Literal('analyzer'),
           t.Literal('other'),
         ]),
+        urgent: t.Optional(t.Boolean()),
         manufacturer: t.Optional(t.String({ maxLength: 255 })),
         model: t.Optional(t.String({ maxLength: 255 })),
         serial_number: t.Optional(t.String({ maxLength: 100 })),
