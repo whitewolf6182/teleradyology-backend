@@ -13,15 +13,18 @@ import { CompanyService } from './services/company.service';
 
 const institutionService = new InstitutionService();
 const companyService = new CompanyService();
+const deviceService = new DeviceService();
 
 
 // console.time("getAllCompanies");
 
-const result = await companyService.getAllCompanies({});
+// const result = await companyService.getAllCompanies({});
 
 // console.timeEnd("getAllCompanies");
 
-console.log('All Companies:', result);
+const devices = await deviceService.getAllDevices({});
+
+console.log('All Devices:', devices);
 
 
 // for(let i = 0; i < 1000; i++) {
