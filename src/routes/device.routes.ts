@@ -368,7 +368,7 @@ export const deviceRoutes = new Elysia({ prefix: '/devices' })
           t.Literal('analyzer'),
           t.Literal('other'),
         ]),
-        urgent: t.Optional(t.Boolean()),
+        urgent: t.Boolean(),
         manufacturer: t.Optional(t.String({ maxLength: 255 })),
         model: t.Optional(t.String({ maxLength: 255 })),
         serial_number: t.Optional(t.String({ maxLength: 100 })),
