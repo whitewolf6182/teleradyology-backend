@@ -10,6 +10,7 @@ import { deviceRoutes } from './routes/device.routes';
 
 import { InstitutionService } from './services/institution.service';
 import { CompanyService } from './services/company.service';
+import { DeviceService } from './services/device.service';
 
 const institutionService = new InstitutionService();
 const companyService = new CompanyService();
