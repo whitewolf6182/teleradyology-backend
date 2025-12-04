@@ -5,8 +5,9 @@
 
 export interface Device {
   device_id: string;
-  device_code: string;
   device_name: string;
+  modality: string;
+  partition_table_name ?: string;
   device_type: string;
   manufacturer?: string;
   model?: string;
@@ -15,7 +16,9 @@ export interface Device {
   aet_title?: string;
   ip_address?: string;
   port: number;
+  urgent ?: boolean;
   location?: string;
+  pacs_integration_key?: string;
   installation_date?: Date;
   last_maintenance_date?: Date;
   next_maintenance_date?: Date;
@@ -34,9 +37,10 @@ export interface DeviceWithInstitution extends Device {
 export interface CreateDeviceDTO {
   device_code: string;
   device_name: string;
-  device_type: string;
+  modality: string;
   manufacturer?: string;
   model?: string;
+  urgent ?: boolean;
   serial_number?: string;
   institution_id: string;
   aet_title?: string;
@@ -51,7 +55,9 @@ export interface UpdateDeviceDTO {
   device_name?: string;
   device_type?: string;
   manufacturer?: string;
+  modality: string;
   model?: string;
+  urgent ?: boolean;
   serial_number?: string;
   institution_id?: string;
   aet_title?: string;
